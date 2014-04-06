@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TonyApp::Application.config.secret_key_base = 'd2f4c2b2ed3c8f0aa41873518bf183e60bea67a7c4f7ae4bbc686e4290e87af79dc4fc01ad818ba99c184b2efe2b1c5cfc2201a097db12b9c7fe6aabf65f34de'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+TonyApp::Application.config.secret_key_base = secure_token
