@@ -1,8 +1,18 @@
 TonyApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+  root 'static_pages#home'
+  match '/about',   to: 'static_pages#about', via: 'get'
+  match '/faq',     to: 'static_pages#faq', via: 'get'
+  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/howitworks', to: 'static_pages#howitworks', via: 'get'
+  match '/ourpledge', to: 'static_pages#ourpledge', via: 'get'
+  match '/signup', to: 'static_pages#signup', via: 'get'
+  match '/signin', to: 'static_pages#signin', via: 'get'
+
+  match '/blog', to: 'static_pages#blog', via: 'get'
+  match '/press', to: 'static_pages#press', via: 'get'
+  match '/terms', to: 'static_pages#terms', via: 'get'
+  match '/privacy', to: 'static_pages#privacy', via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

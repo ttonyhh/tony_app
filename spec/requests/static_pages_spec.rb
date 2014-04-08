@@ -8,8 +8,8 @@ describe "StaticPages" do
       visit '/static_pages/home'
     end
 
-    it "should have the content 'Assistant Cupid' " do
-    	expect(page).to have_content('Assistant Cupid')
+    it "should have the content 'Cupidly' " do
+    	expect(page).to have_content('Cupidly')
     end
 
     it "should have button to Sign up" do
@@ -17,14 +17,14 @@ describe "StaticPages" do
     end
   end
 
-  describe "Help page" do
+  describe "FAQ page" do
     before do
-      visit '/static_pages/help'
+      visit '/static_pages/faq'
     end
 
-    it "should have title and content 'Help'" do
-      expect(page).to have_title('Help')
-      expect(page).to have_content('Help')
+    it "should have title and content 'FAQ'" do
+      expect(page).to have_title('FAQ')
+      expect(page).to have_content('Frequently asked questions')
     end
   end
 
@@ -34,7 +34,7 @@ describe "StaticPages" do
     end
 
     it "should have title and content 'About'" do
-      expect(page).to have_title('About')
+      expect(page).to have_title('About us')
       expect(page).to have_content('About')
     end
   end
