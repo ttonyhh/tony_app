@@ -1,11 +1,12 @@
 TonyApp::Application.routes.draw do
+  get "users/new"
   root 'static_pages#home'
   match '/about',   to: 'static_pages#about', via: 'get'
   match '/faq',     to: 'static_pages#faq', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/howitworks', to: 'static_pages#howitworks', via: 'get'
   match '/ourpledge', to: 'static_pages#ourpledge', via: 'get'
-  match '/signup', to: 'static_pages#signup', via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'static_pages#signin', via: 'get'
 
   match '/blog', to: 'static_pages#blog', via: 'get'
