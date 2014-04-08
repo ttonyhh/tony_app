@@ -22,7 +22,7 @@ describe "StaticPages" do
       visit '/static_pages/help'
     end
 
-    it "should have content 'Help'" do
+    it "should have title and content 'Help'" do
       expect(page).to have_title('Help')
       expect(page).to have_content('Help')
     end
@@ -33,9 +33,20 @@ describe "StaticPages" do
       visit '/static_pages/about'
     end
 
-    it "should have content 'About'" do
+    it "should have title and content 'About'" do
       expect(page).to have_title('About')
       expect(page).to have_content('About')
+    end
+  end
+
+  describe "Contact page" do
+    before do
+      visit '/static_pages/contact'
+    end
+
+    it "should have title and content 'Contact'" do
+      expect(page).to have_title('Contact')
+      expect(page).to have_content('Contact')
     end
   end
 end
